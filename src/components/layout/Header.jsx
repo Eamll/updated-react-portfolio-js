@@ -24,15 +24,28 @@ ElevationScroll.propTypes = {
 
 const Header = () => {
     const theme = useTheme();
+    const trigger = useScrollTrigger({
+        disableHysteresis: true,
+        threshold: 0,
+    });
+
     return (
         <ElevationScroll>
             <AppBar>
                 <Toolbar>
-                    <Typography variant="h6" style={{ color: theme.palette.background }}>My Portfolio</Typography>
+                    <Typography style={{ color: trigger ? theme.palette.background.default : theme.palette.primary.main }}>
+                        My Portfolio
+                    </Typography>
                     <Box flexGrow={1}></Box>
-                    <Button style={{ color: theme.palette.background }}>Inicio</Button>
-                    <Button style={{ color: theme.palette.background }}>Proyectos</Button>
-                    <Button style={{ color: theme.palette.background }}>Contacto</Button>
+                    <Button style={{ color: trigger ? theme.palette.background.default : theme.palette.primary.main }}>
+                        Inicio
+                    </Button>
+                    <Button style={{ color: trigger ? theme.palette.background.default : theme.palette.primary.main }}>
+                        Proyectos
+                    </Button>
+                    <Button style={{ color: trigger ? theme.palette.background.default : theme.palette.primary.main }}>
+                        Contacto
+                    </Button>
                 </Toolbar>
             </AppBar>
         </ElevationScroll>
