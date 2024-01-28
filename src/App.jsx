@@ -3,7 +3,7 @@ import Header from "./components/layout/Header"
 import Home from "./pages/Home"
 import Toolbar from '@mui/material/Toolbar';
 import theme from "./config/theme";
-
+import Divider from '@mui/material/Divider';
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
       <Header />
       <Toolbar />
       <Home />
+      <Divider />
     </ThemeProvider>
   )
 }

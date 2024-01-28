@@ -1,28 +1,32 @@
-import { Box, Container, Typography } from '@mui/material';
+import { HeroSection } from "../components/HeroSection";
 
+
+import { Typography, Box } from "@mui/material";
+import { Container, Button, Grid } from '@mui/material';
 
 const Home = () => {
     return (
         <>
-            <Container className='home'>
-                <Box my={2}>
-                    <Typography variant="h4">
-                        Officia Lorem laboris elit ut minim excepteur sunt veniam commodo laboris ea sint adipisicing sunt. Sunt amet amet consectetur fugiat culpa do laboris. Nostrud irure voluptate velit proident ullamco ipsum pariatur sit.
-                    </Typography>
-                    <Typography variant="h3" className='title'>
-                        Officia Lorem laboris elit ut minim excepteur sunt veniam commodo laboris ea sint adipisicing sunt. Sunt amet amet consectetur fugiat culpa do laboris. Nostrud irure voluptate velit proident ullamco ipsum pariatur sit.
-                    </Typography>
-                    <Typography variant="h3" className='title'>
-                        Officia Lorem laboris elit ut minim excepteur sunt veniam commodo laboris ea sint adipisicing sunt. Sunt amet amet consectetur fugiat culpa do laboris. Nostrud irure voluptate velit proident ullamco ipsum pariatur sit.
-                    </Typography><Typography variant="h3" className='title'>
-                        Officia Lorem laboris elit ut minim excepteur sunt veniam commodo laboris ea sint adipisicing sunt. Sunt amet amet consectetur fugiat culpa do laboris. Nostrud irure voluptate velit proident ullamco ipsum pariatur sit.
-                    </Typography><Typography variant="h3" className='title'>
-                        Officia Lorem laboris elit ut minim excepteur sunt veniam commodo laboris ea sint adipisicing sunt. Sunt amet amet consectetur fugiat culpa do laboris. Nostrud irure voluptate velit proident ullamco ipsum pariatur sit.
-                    </Typography>
-                </Box>
-            </Container>
+            <HeroSection />
+            <Box sx={{ bgcolor: 'background.default' }}>
+                <Grid container position="relative">
+                    <Grid item xs={12}>
+                        <Container>
+                            <Box sx={{ my: 15 }}>
+                                <Typography variant="body1" gutterBottom>
+                                    About Me.
+                                </Typography>
+                                <Typography variant="h4" component="h1" gutterBottom>
+                                    Hi, I am here to help
+                                    your next project
+                                </Typography>
+                            </Box>
+                        </Container>
+                    </Grid>
+                </Grid>
+            </Box>
         </>
     );
 }
 
-export default Home
+export default Home;
