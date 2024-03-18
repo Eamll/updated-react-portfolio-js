@@ -61,18 +61,15 @@ function TimelineCard() {
         },
     ];
 
-    // const [expandedText, setExpandedText] = useState({});
-
-    // const toggleExpandedText = (id) => {
-    //     setExpandedText(prevState => ({ ...prevState, [id]: !prevState[id] }));
-    // };
     const [open, setOpen] = useState(false);
     const [modalContent, setModalContent] = useState('');
     const [modalTitle, setModalTitle] = useState('');
+    const [modalYear, setModalYear] = useState('');
 
-    const handleOpen = (title, text) => {
+    const handleOpen = (title, text, year) => {
         setModalTitle(title);
         setModalContent(text);
+        setModalYear(year);
         setOpen(true);
     };
 
@@ -94,6 +91,9 @@ function TimelineCard() {
                 p: 4,
             }}
         >
+            <Typography id="modal-modal-year" variant="subtitle1" sx={{ mt: 1 }}>
+                {modalYear}
+            </Typography>
             <Typography id="modal-modal-title" variant="h6" component="h2">
                 {modalTitle}
             </Typography>
@@ -122,7 +122,7 @@ function TimelineCard() {
                             <Typography variant="body1" sx={{ marginTop: 1 }}>
                                 {titleWithoutBraces}
                             </Typography>
-                            <Typography variant="body2" sx={{ marginTop: 1, fontWeight: 'bold', cursor: 'pointer' }} onClick={() => handleOpen(data.title, data.text)}>
+                            <Typography variant="body2" sx={{ marginTop: 1, fontWeight: 'bold', cursor: 'pointer' }} onClick={() => handleOpen(data.title, data.text, data.year)}>
                                 Details...
                             </Typography>
                         </Box>
